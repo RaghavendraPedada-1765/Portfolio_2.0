@@ -25,3 +25,5 @@
  .hero-bottom span,.about-facts span,.crew-stations button span,.crew-manifest>span,.crew-manifest i,.log-pose span{font-size:9.5px!important}
  .crew-manifest i{font-style:normal}
 }
+
+.private-note{font-size:12px;letter-spacing:.06em;opacity:.8;border:1px solid currentColor;padding:14px 18px;display:inline-flex;align-items:center;min-height:44px}
