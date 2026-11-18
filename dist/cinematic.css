@@ -58,3 +58,36 @@
 .achievements span{font-size:12px;line-height:1.7;color:#a3bfb4}
 .achievements a{color:#eeeade;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){.achievements{grid-template-columns:1fr}.achievements-title{font-size:21px;margin-top:26px}}
+
+/* Mobile: readable type and 44px touch targets */
+@media(max-width:600px){
+ .launch-copy>.micro{font-size:9px;max-width:220px}
+ .launch-copy p{font-size:13px;max-width:230px}
+ .enter-button{font-size:11px;min-height:48px}
+ .audio-choice{font-size:10px}
+ .lite-link{font-size:10px;padding:12px 0}
+ .load-top{font-size:9px}.load-detail{font-size:9px;line-height:1.5}
+ .icon-button,#menu{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+ .scene-copy{bottom:150px}
+ .scene-copy .micro{font-size:9px}
+ .scene-description{font-size:13px;max-width:300px;line-height:1.6}
+ .crew-mode .scene-description{max-width:280px}
+ .scene-action{font-size:11px;min-height:44px;padding:0}
+ .scene-count{bottom:154px}
+ .scene-count span{font-size:9px}
+ .scene-dock{bottom:max(12px,env(safe-area-inset-bottom));padding-top:6px;gap:4px 10px}
+ .scene-tabs{gap:2px}
+ .scene-tabs button{flex:1 1 0;min-height:44px;font-size:9.5px;letter-spacing:.02em;line-height:1.25;white-space:normal;text-align:center;padding:0 2px}
+ .scene-tabs button.active:before{display:none}
+ .scroll-hint{font-size:9px;letter-spacing:.06em;flex:1;min-width:0}
+ .scene-arrows button{width:44px;height:44px;font-size:17px}
+ .scene-subnav button{font-size:9.5px;min-height:40px;padding:0 6px}
+ .scene-subnav button span{font-size:8px}
+ .intro-caption small{font-size:9px}
+ .skip-intro{font-size:11px;min-height:44px}
+ .dialog-columns p,.captain-grid p{font-size:13px}
+ .solid-button{font-size:11px;min-height:46px}
+ .contact-links{font-size:12px}
+ .contact-links a{min-height:44px;display:inline-flex;align-items:center}
+ .dialog-close,[data-close]{min-width:44px;min-height:44px}
+}
