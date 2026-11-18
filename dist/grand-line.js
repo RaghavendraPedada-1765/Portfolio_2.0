@@ -60,7 +60,7 @@ export class GrandLine {
   this.pedestal(this.crewStage,3.3);this.pedestal(this.projectStage,3.1);this.pedestal(this.captainStage,3);this.pedestal(this.contactStage,3);
   for(const [i,stage] of [this.crewStage,this.projectStage,this.captainStage,this.contactStage].entries()){const light=new T.PointLight([0x93dec8,0x66afed,0xe7b86c,0xa6d4a0][i],22,18,2);light.position.set(-2,5,4);stage.add(light);const rim=new T.PointLight(0x65dbd1,25,15,2);rim.position.set(2,4,-3);stage.add(rim);}
   this.projectOrb=new T.Group();this.projectOrb.position.set(0,3.35,0);this.projectStage.add(this.projectOrb);
-  this.fruitMat=this.material(0x814ca3,{emissive:0x4e2867,emissiveIntensity:.6,roughness:.3,metalness:.15});this.fruit=this.mesh(new T.SphereGeometry(1.15,48,32),this.fruitMat,this.projectOrb);this.fruit.scale.y=1.07;
+  this.fruitMat=this.material(0x2fa38b,{emissive:0x2fa38b,emissiveIntensity:.4,roughness:.3,metalness:.15});this.fruit=this.mesh(new T.SphereGeometry(1.15,48,32),this.fruitMat,this.projectOrb);this.fruit.scale.y=1.07;
   const spiralMaterial=this.material(0xc4a0dc,{emissive:0x6f4194,emissiveIntensity:.7});this.spirals=[];
   for(let i=0;i<18;i++){const y=1-(i/17)*2;const a=i*2.39996;const radius=Math.sqrt(1-y*y);const normal=v(Math.cos(a)*radius,y,Math.sin(a)*radius);const points=[];for(let j=0;j<55;j++){const t=j/54;const theta=t*Math.PI*3.8;const rad=.22*t;points.push(v(Math.cos(theta)*rad,Math.sin(theta)*rad,0));}const curve=new T.CatmullRomCurve3(points);const spiral=this.mesh(new T.TubeGeometry(curve,55,.018,5,false),spiralMaterial,this.projectOrb);spiral.position.copy(normal).multiplyScalar(1.17);spiral.quaternion.setFromUnitVectors(v(0,0,1),normal);this.spirals.push(spiral);}
   const stemPath=new T.CatmullRomCurve3([v(0,1.1,0),v(.04,1.6,0),v(.5,1.8,0),v(.65,1.5,0),v(.4,1.38,0)]);this.mesh(new T.TubeGeometry(stemPath,30,.085,8,false),this.material(0xadc57c),this.projectOrb);
@@ -105,7 +105,7 @@ export class GrandLine {
    this.activeCrew=data.root;data.root.visible=true;data.root.rotation.y=.12;this.cb.onLoading('');
   }catch(error){if(request===this.crewRequest){this.cb.onLoading('');this.cb.onError(`Could not load ${id}. Choose another crewmate or try again.`);}console.warn('Crew asset failed',id,error);}
  }
- showProject(index){this.projectIndex=index;const colors=[0x8545b0,0x257eaf,0x39946a];this.fruitMat.color.setHex(colors[index]);this.fruitMat.emissive.setHex(colors[index]);this.fruitMat.emissiveIntensity=.4;}
+ showProject(index){this.projectIndex=index;const colors=[0x2fa38b,0xd98b2b,0x3f7fd1,0x8545b0,0x257eaf,0x39946a,0xc04f6a];this.fruitMat.color.setHex(colors[index]);this.fruitMat.emissive.setHex(colors[index]);this.fruitMat.emissiveIntensity=.4;}
  go(index){this.sceneIndex=index;this.drag=0;this.pitch=0;this.portal.visible=false;this.cb.onLoading('');this.cameraTransition=1;}
  startIntro(){this.sceneIndex=0;this.flying=true;this.introTime=0;this.introStarted=performance.now();this.portal.visible=true;this.portal.scale.setScalar(1);this.portalMaterial.uniforms.uFade.value=1;this.camera.position.set(-36,5.5,22);this.look.set(-35,5,-10);this.cb.onIntroCaption('LEAVE THE FAMILIAR BEHIND.');}
  finishIntro(){this.flying=false;this.sceneIndex=0;this.portal.visible=false;this.cameraTransition=1;}
