@@ -1,25 +1,53 @@
 # Raghavendra Pedada — Enter the Grand Line
 
-A full-screen One Piece portfolio with a cinematic harbor-to-portal opening, the detailed Thousand Sunny, ten selectable Straw Hat models, floating Devil Fruit project objects, a personal Wanted poster, and a Den Den Mushi contact scene.
+My personal portfolio, built as a cinematic 3D voyage inspired by *One Piece*. Sail past the Thousand Sunny, meet the crew (each one mapped to a part of my skill set), explore my projects as Devil Fruits, read my Wanted poster, and ring the Den Den Mushi to get in touch.
 
-## Preview
-Serve `dist/` over HTTP: `python -m http.server 5174 --bind 127.0.0.1 --directory dist`.
+**Live:** https://raghavendrapedada-1765.github.io/Portfolio_2.0/
+**Lite (text-first) version:** https://raghavendrapedada-1765.github.io/Portfolio_2.0/lite.html
 
-## Implementation
-- `dist/index.html`, `cinematic.css`: entrance, responsive scene interface and accessible dialogs.
-- `dist/experience.js`: portfolio content, destinations, crew selection and opt-in audio.
-- `dist/grand-line.js`: Three.js ocean, camera choreography, model loading and interactions.
-- `dist/lite.html`, `style.css`, `app.js`, `scene.js`: text-rich Lite alternative with a link to the cinematic version.
-- `dist/assets/models/`: optimized user-provided ship, harbor and crew GLB assets.
-- `dist/assets/audio/`: user-provided music and character cues; silent until enabled.
-- `dist/vendor/`: local Three.js r168 modules, loaders, postprocessing and Draco decoder.
+## What's inside
 
-Scroll or use the destination buttons to travel; drag to change the viewpoint. Crew and project selections have dedicated controls. Details open in native dialogs with Escape support. The menu includes reduced motion, replay and Lite access. Smaller screens use lower pixel density and disable bloom by default. Models load on demand and are cached during the visit. Some source character models have animations; others retain their supplied poses. Luffy uses a stable pose to avoid the source jump animation's root motion.
+| Scene | What you'll find |
+| --- | --- |
+| The Sunny | Intro and who I am |
+| The Crew | Ten crewmates, each linked to the tools and skills I use |
+| Expeditions | [HashPilot](https://github.com/RaghavendraPedada-1765/HashPilot), [Cosmic-RAG-System](https://github.com/RaghavendraPedada-1765/Cosmic-RAG-System), [AI ATS Checker](https://github.com/RaghavendraPedada-1765/AI_ATS_Check) |
+| The Captain | About me, education and experience at IFB Automotive |
+| Connect | Email, GitHub and LinkedIn |
 
-Identity, education, IFB experience, project descriptions, skills, photo, résumé and social links come from the existing portfolio at the previous portfolio. Project flows are conceptual, with no invented metrics. Downloaded assets came from the user's Downloads folder; originals remain unchanged. Harbor geometry and textures were reduced; Nami was converted to standard glTF PBR materials; large crew textures were resized. Source asset author/license metadata was not supplied. The Devil Fruit, portal and telephone snail geometry are custom implementation assets.
+## Tech stack
 
-Publish the `dist/` directory on a static web host. No build step or backend is required. Google Fonts have local system fallbacks.
+- **Three.js r168** for the scene: animated ocean shader, scripted camera path, GLTF/Draco model loading, bloom post-processing
+- **Vanilla JavaScript, HTML and CSS**: no framework and no build step
+- **Blender + Mixamo** to rig and animate some of the crew models, compressed with Draco
 
-Robin and Brook now use user-provided Mixamo Hip Hop FBX rigs and animation. Materials were restored from the original GLBs, scale normalized, textures embedded, and meshes compressed with Draco. Editable packed Blender sources are retained separately in `source-assets/rigged-crew/`.
+## Built with performance and accessibility in mind
 
-Robin uses a custom gentle idle derived from the new rig, avoiding leg-through-skirt intersections in the supplied dance. Her original dance action remains in the Blender source. Brook plays the supplied Hip Hop dance. Reduced motion pauses both.
+- Models load on demand and are cached for the visit
+- Smaller screens get a lower pixel ratio, and bloom is off by default; a "Lighter effects" toggle is always available
+- Reduced-motion mode pauses animation and respects `prefers-reduced-motion`
+- Details open in native `<dialog>` elements with keyboard and Escape support
+- Audio stays off until you opt in
+- A full text-based Lite version for anyone who prefers to skip the 3D
+
+## Run it locally
+
+No install needed. Serve the `dist/` folder over HTTP:
+
+```bash
+python -m http.server 5174 --directory dist
+```
+
+Then open http://localhost:5174.
+
+## Deployment
+
+Every push to `main` deploys `dist/` to GitHub Pages through `.github/workflows/deploy.yml`.
+
+## Credits
+
+*One Piece* and its characters belong to Eiichiro Oda, Shueisha and Toei Animation. This is a non-commercial fan tribute. The 3D crew, ship and harbor models are third-party fan creations; the Devil Fruit, portal and Den Den Mushi models were made for this site.
+
+## Contact
+
+raghavendrapedadaa@gmail.com · [LinkedIn](https://www.linkedin.com/in/raghavendra-pedada-baa349356/) · [GitHub](https://github.com/RaghavendraPedada-1765)

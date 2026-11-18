@@ -34,3 +34,18 @@
  .launch-ticket{width:145px}.ticket-photo{height:100px}
  .launch-ticket small{font-size:5px;margin:5px 0}.ticket-code{height:15px}
 }
+
+/* Polish: readability and overlap fixes */
+.skip-intro{top:auto;bottom:42px;font-size:11px;background:#06171dcc;border:1px solid #abc0b466;padding:9px 16px;border-radius:2px}
+.launch-emblem{flex-shrink:0}
+.launch-top{gap:16px}
+.launch-name{min-width:0}
+.hud:before{content:'';position:fixed;inset:0;pointer-events:none;background:linear-gradient(90deg,#03101499 0%,#0310144d 38%,transparent 62%),linear-gradient(0deg,#031014b3 0%,transparent 45%);z-index:-1}
+.scene-copy h1,.scene-copy .micro{text-shadow:0 2px 18px #020a0ccc}
+.scene-description{color:#dbe6df;text-shadow:0 1px 10px #020a0ce6,0 0 2px #020a0c}
+.scene-subnav button{color:#d0ddd6;text-shadow:0 1px 8px #020a0ce6,0 0 2px #020a0c}
+.scene-subnav button:hover{color:#fff}
+@media(max-width:600px){
+ .launch-name{font-size:clamp(38px,12vw,57px)}
+ .skip-intro{bottom:30px;font-size:10px}
+}
