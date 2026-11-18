@@ -21,3 +21,7 @@
  .sound-button,.menu-button{min-width:44px;min-height:44px}
  footer span{font-size:9.5px}
 }
+@media(max-width:600px){
+ .hero-bottom span,.about-facts span,.crew-stations button span,.crew-manifest>span,.crew-manifest i,.log-pose span{font-size:9.5px!important}
+ .crew-manifest i{font-style:normal}
+}
