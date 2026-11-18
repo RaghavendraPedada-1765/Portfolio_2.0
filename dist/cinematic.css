@@ -91,3 +91,4 @@
  .contact-links a{min-height:44px;display:inline-flex;align-items:center}
  .dialog-close,[data-close]{min-width:44px;min-height:44px}
 }
+@media(max-width:600px){.launch-copy p{max-width:200px}.launch-ticket{width:108px;right:-4px;top:26%;opacity:.45}.launch-copy h2{max-width:240px}}

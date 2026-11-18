@@ -8,3 +8,16 @@
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 .wanted-wrap:before{bottom:45px}.poster-note{color:#b2c3bc}.lite .ship-caption{display:none}
 .island-stage{overflow:clip}html{overflow-x:clip}@media(max-width:700px){.ship-caption{bottom:78px;left:8%}.hero-bottom>span:last-child{display:none}}
+
+/* Mobile: readable type and 44px touch targets */
+@media(max-width:600px){
+ .eyebrow,.timeline-date,.section-coordinate{font-size:10px!important;letter-spacing:.12em}
+ .hero-meta,.text-button,.pin-number,.pin-type,.timeline-tag,.poster-sub,.poster-foot{font-size:9.5px!important}
+ .primary-button{font-size:11px!important;min-height:48px}
+ .spirit-grid i,[class*="spirit"] i{font-size:10px!important}
+ .text-button,.line-link,.contact-socials a,.copy-email,footer a{min-height:44px;display:inline-flex;align-items:center}
+ .text-button{padding:0 6px}
+ .contact-socials a,footer a{font-size:11px!important}
+ .sound-button,.menu-button{min-width:44px;min-height:44px}
+ footer span{font-size:9.5px}
+}
