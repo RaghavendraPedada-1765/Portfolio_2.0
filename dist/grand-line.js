@@ -105,7 +105,7 @@ export class GrandLine {
    this.activeCrew=data.root;data.root.visible=true;data.root.rotation.y=.12;this.cb.onLoading('');
   }catch(error){if(request===this.crewRequest){this.cb.onLoading('');this.cb.onError(`Could not load ${id}. Choose another crewmate or try again.`);}console.warn('Crew asset failed',id,error);}
  }
- showProject(index){this.projectIndex=index;const colors=[0x8545b0,0x257eaf,0x39946a];this.fruitMat.color.setHex(colors[index]);this.fruitMat.emissive.setHex(colors[index]);this.fruitMat.emissiveIntensity=.4;}
+ showProject(index){this.projectIndex=index;const colors=[0x2fa38b,0xd98b2b,0x3f7fd1,0x8545b0,0x257eaf,0x39946a,0xc04f6a];this.fruitMat.color.setHex(colors[index]);this.fruitMat.emissive.setHex(colors[index]);this.fruitMat.emissiveIntensity=.4;}
  go(index){this.sceneIndex=index;this.drag=0;this.pitch=0;this.portal.visible=false;this.cb.onLoading('');this.cameraTransition=1;}
  startIntro(){this.sceneIndex=0;this.flying=true;this.introTime=0;this.introStarted=performance.now();this.portal.visible=true;this.portal.scale.setScalar(1);this.portalMaterial.uniforms.uFade.value=1;this.camera.position.set(-36,5.5,22);this.look.set(-35,5,-10);this.cb.onIntroCaption('LEAVE THE FAMILIAR BEHIND.');}
  finishIntro(){this.flying=false;this.sceneIndex=0;this.portal.visible=false;this.cameraTransition=1;}

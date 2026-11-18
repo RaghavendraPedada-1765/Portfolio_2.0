@@ -49,3 +49,12 @@
  .launch-name{font-size:clamp(38px,12vw,57px)}
  .skip-intro{bottom:30px;font-size:10px}
 }
+
+/* Achievements list in the captain dialog */
+.achievements-title{font:600 25px var(--display);text-transform:uppercase;margin:34px 0 14px}
+.achievements{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.achievements li{border:1px solid #b9cdb433;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.achievements strong{font:600 15px/1.3 var(--display);letter-spacing:.02em;color:var(--gold)}
+.achievements span{font-size:12px;line-height:1.7;color:#a3bfb4}
+.achievements a{color:#eeeade;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){.achievements{grid-template-columns:1fr}.achievements-title{font-size:21px;margin-top:26px}}
