@@ -2,8 +2,8 @@
 
 My personal portfolio, built as a cinematic 3D voyage inspired by *One Piece*. Sail past the Thousand Sunny, meet the crew (each one mapped to a part of my skill set), explore my projects as Devil Fruits, read my Wanted poster, and ring the Den Den Mushi to get in touch.
 
-**Live:** https://raghavendrapedada-1765.github.io/Portfolio_2.0/
-**Lite (text-first) version:** https://raghavendrapedada-1765.github.io/Portfolio_2.0/lite.html
+**Live:** https://raghavendrapedada.dev
+**Lite (text-first) version:** https://raghavendrapedada.dev/lite.html
 
 ## What's inside
 
